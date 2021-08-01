@@ -1,0 +1,10 @@
+body {
+   background: black;
+   color: white;  
+}
+
+.timer-container {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
