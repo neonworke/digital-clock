@@ -7,20 +7,15 @@ function displayTime() {
         second: "numeric",
         hour12: true,
     });
+
+    const curr_date = document.querySelector("#current-date");
+    const day = `${currentDate.getDate() < 10 ? "0" : ""}${currentDate.getDate()}`;
+    const month = `${(currentDate.getMonth() + 1) < 10 ? "0" : ""}${currentDate.getMonth() +1 }`;
+    const year = currentDate.getFullYear();
+
+    curr_date.innerText = `${day}/${month}/${year}`;
 }
 
-function displayDate() {
-        currentDate = new Date();
-        const output = document.querySelector("#current-date");
-         let month = currentDate.getMonth() + 1;
-         let year = currentDate.getFullYear();
-         let date = currentDate.getDate();
-         
-         let current_date = `${date}-${month}-${year}`;
-         output.innerText = current_date;
-}
-
-let currdate = setInterval(displayDate)
 
 let timer = setInterval(displayTime, 1000);
 function stopClock(){
